@@ -1,0 +1,51 @@
+:root {
+    --purple: #6f42c1;
+    --purple-light: #e2d9f3;
+}
+
+.bg-purple {
+    background-color: var(--purple);
+}
+
+.text-purple {
+    color: var(--purple);
+}
+
+.btn-purple {
+    background-color: var(--purple);
+    color: white;
+}
+
+.btn-purple:hover {
+    background-color: #5a32b0;
+    color: white;
+}
+
+/* Colorblind simulation overlays */
+.colorblind-overlay-protanopia {
+    background-color: rgba(229, 222, 255, 0.5);
+}
+
+.colorblind-overlay-deuteranopia {
+    background-color: rgba(254, 247, 205, 0.5);
+}
+
+.colorblind-overlay-tritanopia {
+    background-color: rgba(253, 225, 211, 0.5);
+}
+
+.colorblind-overlay-achromatomaly {
+    background-color: rgba(211, 228, 253, 0.5);
+}
+
+/* Form styling */
+.form-control, .form-select {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.25);
+}
