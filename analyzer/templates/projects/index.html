@@ -1,44 +1,51 @@
-{% extends 'base.html' %} {% load static %} {% block head %}
-<link
-  rel="stylesheet"
-  href="{% static 'css/projects/projects-index.css' %}"
-/>
-{% endblock %} {% block content %}
+{% extends 'base.html' %}
+{% load static %}
 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/projects/projects-index.css' %}">
+{% endblock %}
+
+{% block content %}
 <section class="page-header">
   <h1>Project List</h1>
-  <img
-  class="icon"
-    src="{% static 'images/completed.png' %}"
-    alt="completed"
-  />
-  <img
-    src="{% static 'images/inprogress.png' %}"
-    alt="work in progress"
-  />
+  <div class="status-icons">
+    <img class="icon" src="{% static 'images/completed.png' %}" alt="Completed" style="width: 30px; height: 30px;">
+    <span>Completed</span>
+    <img class="icon" src="{% static 'images/inprogress.png' %}" alt="In Progress" style="width: 30px; height: 30px;">
+    <span>In Progress</span>
+  </div>
 </section>
 
 <section class="card-container">
   {% for project in projects %}
   <div class="card">
     <div class="card-content">
-      <div class="card-img-container">
-        <img 
-          class="icon"
-          src="{% static 'images/completed.png' %}"
-          alt="completed"
-        />
+      <div class="card-header">
+        {% if project.is_completed %}
+          <img class="status-icon" src="{% static 'images/completed.png' %}" alt="Completed" style="width: 40px; height: 40px;">
+        {% else %}
+          <img class="status-icon" src="{% static 'images/inprogress.png' %}" alt="In Progress" style="width: 40px; height: 40px;">
+        {% endif %}
+        <h2 class="card-title">{{ project.name }}</h2>
       </div>
-      <h2 class="card-title">{{ project.name }}</h2>
-      {% if project.date > 0 %}
-      <p>A {{ cat.date }} date </p>
-      {% else %}
-      <p>A {{ project.description}} descrition.</p>
+      
+      {% if project.website_url %}
+      <div class="website-preview">
+        <img src="https://api.screenshotmachine.com/?key=YOUR_API_KEY&url={{ project.website_url|urlencode }}&dimension=400x300" 
+             alt="{{ project.name }} screenshot" 
+             style="max-width: 100%; border: 1px solid #ddd; border-radius: 4px;">
+        <a href="{{ project.website_url }}" target="_blank" class="visit-btn">Visit Website</a>
+      </div>
       {% endif %}
-      <p><small>{{project.description }}</small></p>
+      
+      <div class="project-details">
+        {% if project.date %}
+        <p><strong>Date:</strong> {{ project.date }}</p>
+        {% endif %}
+        <p>{{ project.description }}</p>
+      </div>
     </div>
   </div>
   {% endfor %}
 </section>
-
 {% endblock %}

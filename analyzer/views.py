@@ -7,19 +7,23 @@ from .utils import analyze_website_for_colorblindness
 from django.contrib import messages
 from django.core.files.base import ContentFile
 import base64
+from selenium import webdriver
+
+
 
 def about(request):
     return render(request, 'about.html')
 
 class Project: 
-    def __init__(self, name, description, date):
+    def __init__(self, name, description, date, status):
         self.name = name
         self.description = description
         self.date = date
+        self.status = status
 
 projects = [
-    Project("AdobeMain", "main page of the adobe", "2025-04-28"), 
-    Project("NewsRu", "the website of newsru", "2025-04-28" )
+    Project("AdobeMain", "main page of the adobe", "2025-04-28", 'completed'), 
+    Project("NewsRu", "the website of newsru", "2025-04-28", 'in progress')
 ]
 
 def projects_index(request):

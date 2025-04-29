@@ -1,4 +1,5 @@
 /* Color Variables */
+
 :root {
     --adobe-red: #FA0F00;
     --adobe-light-red: #FFDEE2;
@@ -7,6 +8,7 @@
 
 /* Base Styles */
 body {
+
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -94,5 +96,24 @@ body {
 
 .nav-link.text-red-custom:hover {
     text-decoration: underline;
-    background-color: #f9f9f9; /* Optional hover effect */
+    background-color: #f9f9f9; 
+    margin-left: 10px;
+}
+/* Navbar Item Spacing */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; 
+}
+
+
+.nav-link.text-red-custom {
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.nav-link.text-red-custom:hover {
+    text-decoration: underline;
+    background-color: #f9f9f9;
+    transform: translateY(-2px);
 }

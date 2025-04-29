@@ -3,55 +3,105 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-}
-
-.card {
+  }
+  
+  .card {
     width: 275px;
     margin: 10px;
     border: var(--borders);
     box-shadow: var(--card-box-shadow);
-}
-
-.card-content {
+  }
+  
+  .card-content {
     padding: 10px;
     width: 100%;
-}
-
-.usr-img {
+  }
+  
+  .usr-img {
     width: 100%;
     border-radius: var(--card-border-radius);
-}
-
-.card > a {
+  }
+  
+  .card > a {
     text-decoration: none;
     color: var(--text-color);
-}
-
-.card h2 {
+  }
+  
+  .card h2 {
     margin: 10px 0;
     font-size: var(--font-xl);
-}
-
-.card p {
+  }
+  
+  .card p {
     margin: 5px 0;
     font-size: var(--font-reg);
-}
-
-.card a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-}
-
-/* New icon styles */
+  }
+  /* Icon Container - centers the icon */
 .card-img-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    align-items: center;
+    margin-bottom: 8px;
+    height: 27.5px; /* 1/10th of card width (275px/10) */
 }
 
-.icon {
-    width: 24px;  /* Adjust this value to change icon size */
-    height: 24px; /* Maintain aspect ratio */
+/* Icon Styles - makes images icon-sized */
+.card-img-container .icon {
+    width: 16px; /* Slightly smaller than container */
+    height: 16px; /* Maintain aspect ratio */
     object-fit: contain;
 }
+
+/* Page Header Icons */
+.page-header .card-img-container {
+    height: auto; /* Let content determine height */
+    gap: 10px; /* Space between icons */
+}
+
+.page-header .card-img-container .icon {
+    width: 20px; /* Slightly larger for header */
+    height: 20px;
+}
+/* Optional: Add hover effect to icons */
+.card-img-container .icon {
+    transition: transform 0.2s ease;
+}
+
+.card:hover .icon {
+    transform: scale(1.1); /* Slight enlarge on hover */
+}
+
+/* Ensure consistent icon alignment */
+.icon {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+.status-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .website-preview {
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .visit-btn {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 5px 10px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }

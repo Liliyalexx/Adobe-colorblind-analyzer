@@ -26,3 +26,12 @@ class AnalysisResult(models.Model):
             validator(self.url)
         except ValidationError:
             raise ValidationError({'url': 'Enter a valid URL'})
+        # models.py
+class Project(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    date = models.DateField(null=True, blank=True)
+    image_url = models.URLField(max_length=500, blank=True) 
+   
+    def __str__(self):
+        return f"Project {self.url} for {self.get_colorblind_type_display()}"
