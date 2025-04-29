@@ -1,51 +1,98 @@
+/* Color Variables */
 :root {
-    --purple: #6f42c1;
-    --purple-light: #e2d9f3;
+    --adobe-red: #FA0F00;
+    --adobe-light-red: #FFDEE2;
+    --adobe-bg-red: #FDE1D3;
 }
 
+/* Base Styles */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Navbar Styles */
 .bg-purple {
-    background-color: var(--purple);
+    background-color: #6B46C1;
 }
 
-.text-purple {
-    color: var(--purple);
+/* Button Styles */
+.btn-primary {
+    background-color: var(--adobe-red);
+    border-color: var(--adobe-red);
+}
+.btn-primary:hover {
+    background-color: #D80C00;
+    border-color: #D80C00;
 }
 
-.btn-purple {
-    background-color: var(--purple);
-    color: white;
+/* Card Styles */
+.card {
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.btn-purple:hover {
-    background-color: #5a32b0;
-    color: white;
-}
-
-/* Colorblind simulation overlays */
-.colorblind-overlay-protanopia {
-    background-color: rgba(229, 222, 255, 0.5);
-}
-
-.colorblind-overlay-deuteranopia {
-    background-color: rgba(254, 247, 205, 0.5);
-}
-
-.colorblind-overlay-tritanopia {
-    background-color: rgba(253, 225, 211, 0.5);
-}
-
-.colorblind-overlay-achromatomaly {
-    background-color: rgba(211, 228, 253, 0.5);
-}
-
-/* Form styling */
+/* Form Styles */
 .form-control, .form-select {
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    border: 1px solid #ced4da;
+    padding: 0.75rem 1rem;
+    border-radius: 0.375rem;
+    border: 1px solid #D1D5DB;
 }
 
-.form-control:focus, .form-select:focus {
-    border-color: var(--purple);
-    box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.25);
+/* Alert Styles */
+.alert-info {
+    background-color: #F0F9FF;
+    border-color: #E0F2FE;
+    color: #0369A1;
+}
+
+/* Badge Styles */
+.badge {
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+}
+
+/* Colorblind Type Indicators */
+.colorblind-protanopia {
+    background-color: #E5DEFF;
+}
+.colorblind-deuteranopia {
+    background-color: #FEF7CD;
+}
+.colorblind-tritanopia {
+    background-color: #FDE1D3;
+}
+.colorblind-achromatomaly {
+    background-color: #D3E4FD;
+}
+
+/* Analysis Results */
+.issue-card {
+    border-left: 3px solid var(--adobe-red);
+    transition: all 0.2s ease;
+}
+.issue-card:hover {
+    background-color: #F9FAFB;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.navbar-brand span.adobe-red {
+    color: #FA0F00;
+    font-weight: 700;
+}
+.text-red-custom {
+    color: #FA0F00 !important; /* Adobe red or adjust as needed */
+}
+
+.bg-white-custom {
+    background-color: white !important;
+}
+
+.nav-link.text-red-custom:hover {
+    text-decoration: underline;
+    background-color: #f9f9f9; /* Optional hover effect */
 }

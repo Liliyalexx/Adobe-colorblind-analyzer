@@ -10,17 +10,17 @@
                     Enter a website URL to analyze potential accessibility issues for users with color blindness.
                 </p>
                 
-                <form method="post" class="mb-4">
+                <form method="post" class="mb-12">
                     {% csrf_token %}
                     <div class="row g-3">
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             {{ form.url }}
                         </div>
                         <div class="col-md-3">
                             {{ form.colorblind_type }}
                         </div>
                         <div class="col-md-1">
-                            <button type="submit" class="btn btn-primary w-100">Analyze</button>
+                            <button type="submit" class="btn btn-primary w-300">Analyze</button>
                         </div>
                     </div>
                 </form>
@@ -36,7 +36,7 @@
         {% if recent_analyses %}
         <div class="card shadow-sm">
             <div class="card-header bg-white">
-                <h5 class="mb-0">Recent Analyses</h5>
+                <h5 class="mb-0">Recent Projects</h5>
             </div>
             <div class="card-body">
                 <div class="list-group">

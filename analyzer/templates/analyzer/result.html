@@ -34,7 +34,9 @@
                             
                             <div class="mt-2">
                                 {% for issue_msg in issue.issues %}
-                                <span class="badge bg-warning text-dark me-1">{{ issue_msg }}</span>
+                                <div class="alert alert-{% if analysis.issues_count > 0 %}warning{% else %}success{% endif %}">
+                                    Found {{ analysis.issues_count }} issues
+                                </div>
                                 {% endfor %}
                             </div>
                         </div>

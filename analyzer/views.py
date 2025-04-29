@@ -1,4 +1,3 @@
-
 import json
 from django.shortcuts import render, redirect
 from django.views import View
@@ -9,9 +8,26 @@ from django.contrib import messages
 from django.core.files.base import ContentFile
 import base64
 
+def about(request):
+    return render(request, 'about.html')
+
+class Project: 
+    def __init__(self, name, description, date):
+        self.name = name
+        self.description = description
+        self.date = date
+
+projects = [
+    Project("AdobeMain", "main page of the adobe", "2025-04-28"), 
+    Project("NewsRu", "the website of newsru", "2025-04-28" )
+]
+
+def projects_index(request):
+    return render(request, 'projects/index.html', {'projects': projects})
+
 class HomeView(View):
     template_name = 'analyzer/home.html'
-    
+        
     def get(self, request):
         form = UrlAnalysisForm()
         recent_analyses = AnalysisResult.objects.order_by('-created_at')[:5]
