@@ -86,6 +86,8 @@ def login_view(request):
         else:
             return render(request, 'login.html', {'error': 'Invalid credentials'})
     return render(request, 'login.html')
+
+
 def about(request):
     return render(request, 'about.html')
 
