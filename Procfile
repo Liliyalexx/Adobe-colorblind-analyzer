@@ -1,1 +1,1 @@
-web: gunicorn analyzer_project.wsgi
+web: gunicorn colorblind-analizer.wsgi

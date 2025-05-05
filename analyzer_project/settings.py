@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'analyzer_project.wsgi.application'
+WSGI_APPLICATION = 'colorblind-analyzer.wsgi.application'
 
 
 # Database
