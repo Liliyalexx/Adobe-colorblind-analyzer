@@ -1,1 +1,3 @@
-web: gunicorn analyzer_project.wsgi
+[packages]
+django = "*"
+psycopg2-binary = "*"
