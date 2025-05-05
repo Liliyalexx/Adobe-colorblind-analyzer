@@ -8,7 +8,6 @@ psycopg2-binary = "*"
 whitenoise = "*"
 dj-database-url = "*"
 python-dotenv = "*"
-gunicorn = "*"
 django = "*"
 requests = "*"
 bs4 = "*"
@@ -16,6 +15,7 @@ selenium = "*"
 webdriver-manager = "*"
 pillow = "*"
 numpy = "*"
+gunicorn = "*"
 
 [dev-packages]
 
