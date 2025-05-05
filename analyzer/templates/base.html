@@ -15,14 +15,45 @@
         <div class="container">
             <a class="navbar-brand" href="/">
                 <img src="/static/images/Adobe-Logo-History-1a.png" alt="Logo" width="70" height="40" class="me-2">
-                <span class="adobe-red">Adobe Colorblind Analyzer</span>
+                <span class="adobe-white">Adobe Colorblind Analyzer</span>
             </a>
             <ul class="navbar-nav">
+                <!-- Home -->
                 <li class="nav-item">
-                    <a class="nav-link text-red-custom  px-2 py-1 rounded" href="/projects">Projects</a>
+                    <a class="nav-link text-white d-flex align-items-center" href="{% url 'home' %}">
+                        <i class="mdi mdi-home-outline me-1"></i> Home
+                    </a>
+                </li>
+                
+                <!-- Login -->
+                <li class="nav-item">
+                    <a class="nav-link text-white d-flex align-items-center" href="{% url 'login' %}">
+                        <i class="mdi mdi-login me-1"></i> Login
+                    </a>
+                </li>
+            
+                <!-- Signup -->
+                <li class="nav-item">
+                    <a class="nav-link text-white d-flex align-items-center" href="{% url 'signup' %}">
+                        <i class="mdi mdi-account-plus-outline me-1"></i> Sign Up
+                    </a>
+                </li>
+            
+                <!-- Existing links -->
+                <li class="nav-item">
+                    <a class="nav-link text-white d-flex align-items-center" href="{% url 'create_project' %}">
+                        <i class="mdi mdi-plus-box-outline me-1"></i> Create Project
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-red-custom  px-2 py-1 rounded" href="/about">About</a>
+                    <a class="nav-link text-white d-flex align-items-center" href="/projects">
+                        <i class="mdi mdi-view-dashboard-outline me-1"></i> Projects
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white d-flex align-items-center" href="/about">
+                        <i class="mdi mdi-information-outline me-1"></i> About
+                    </a>
                 </li>
             </ul>
             
@@ -46,7 +77,7 @@
             </div>
             
             <div class="flex items-center space-x-2">
-                <a href="#" class="btn btn-outline-secondary btn-sm flex items-center">
+                <a href="https://www.colourblindawareness.org/" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1">
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="12" y1="16" x2="12" y2="12"></line>
@@ -54,7 +85,7 @@
                     </svg>
                     Documentation
                 </a>
-                <a href="#" class="btn btn-outline-secondary btn-sm flex items-center">
+                <a href="{% url 'about' %}" class="btn btn-outline-secondary btn-sm flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1">
                         <circle cx="12" cy="12" r="3"></circle>
                         <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
@@ -62,11 +93,13 @@
                     Settings
                 </a>
             </div>
+            
         </div>
     </header>
     
     <main class="max-w-6xl mx-auto px-4 py-6 w-full">
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
     </main>
     
     <footer class="mt-5 py-3 bg-white border-t border-gray-200">

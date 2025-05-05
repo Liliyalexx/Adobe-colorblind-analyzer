@@ -1,5 +1,6 @@
 from django import forms
-from .models import AnalysisResult
+from .models import AnalysisResult, Project, Note
+
 
 class UrlAnalysisForm(forms.ModelForm):
     class Meta:
@@ -12,3 +13,14 @@ class UrlAnalysisForm(forms.ModelForm):
             }),
             'colorblind_type': forms.Select(attrs={'class': 'form-select'})
         }
+
+class ProjectForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ['name', 'website_url', 'description', 'image', 'is_completed']
+        
+
+class NoteForm(forms.ModelForm):
+    class Meta:
+        model = Note
+        fields = ['text']

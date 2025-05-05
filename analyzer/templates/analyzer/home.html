@@ -3,56 +3,62 @@
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-lg-8">
+
+        <!-- Presentation Container -->
         <div class="card shadow-sm mb-5">
             <div class="card-body text-center py-5">
-                <h1 class="display-5 mb-4">Colorblind Accessibility Analyzer</h1>
+                <h1 class="display-5 mb-4">Colorblind Analyzer</h1>
                 <p class="lead mb-4">
-                    Enter a website URL to analyze potential accessibility issues for users with color blindness.
+                    <strong>Colorblind Analyzer</strong> is an internal tool designed for <strong>web developers</strong> and <strong>UX/UI designers</strong> to help them create accessible content for users with different types of color vision deficiencies.
                 </p>
-                
-                <form method="post" class="mb-12">
-                    {% csrf_token %}
-                    <div class="row g-3">
-                        <div class="col-md-12">
-                            {{ form.url }}
-                        </div>
-                        <div class="col-md-3">
-                            {{ form.colorblind_type }}
-                        </div>
-                        <div class="col-md-1">
-                            <button type="submit" class="btn btn-primary w-300">Analyze</button>
-                        </div>
-                    </div>
-                </form>
-                
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-danger">{{ message }}</div>
-                    {% endfor %}
+                <p class="mb-3">
+                    Our tool simulates how websites appear to individuals with common types of color blindness, detects potential accessibility issues, and helps teams build inclusive digital experiences. By proactively addressing these issues, teams can meet accessibility standards and deliver a better user experience for everyone.
+                </p>
+                <h4 class="mt-5">Why it matters</h4>
+                <ul class="text-start mx-auto" style="max-width: 600px;">
+                    <li>Approximately <strong>1 in 12 men</strong> and <strong>1 in 200 women</strong> are color blind.</li>
+                    <li>Colorblind users may not distinguish red/green buttons or error messages.</li>
+                    <li>Designing for accessibility improves usability for all users, not just those with disabilities.</li>
+                </ul>
+
+                <h4 class="mt-5">Adobe & Accessibility</h4>
+                <ul class="text-start mx-auto" style="max-width: 600px;">
+                    <li>Adobe has prioritized accessibility across its product suite, including Adobe XD and Acrobat.</li>
+                    <li>Adobe offers tools for simulating color blindness in design workflows.</li>
+                    <li>Adobe’s accessibility efforts help designers meet WCAG standards and create inclusive experiences.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Recent Projects -->
+    <!-- Recent Projects -->
+{% if recent_analyses %}
+<div class="card shadow-sm">
+    <div class="card-header bg-white">
+        <h5 class="mb-0">My Recent Projects</h5>
+    </div>
+    <div class="card-body">
+        <div class="list-group">
+            {% for analysis in recent_analyses %}
+            <a href="{% url 'analysis_result' analysis.id %}" class="list-group-item list-group-item-action d-flex align-items-center gap-3">
+                {% if analysis.thumbnail_url %}
+                    <img src="{{ analysis.thumbnail_url }}" alt="Page Preview" class="img-thumbnail" style="max-width: 80px;">
                 {% endif %}
-            </div>
-        </div>
-        
-        {% if recent_analyses %}
-        <div class="card shadow-sm">
-            <div class="card-header bg-white">
-                <h5 class="mb-0">Recent Projects</h5>
-            </div>
-            <div class="card-body">
-                <div class="list-group">
-                    {% for analysis in recent_analyses %}
-                    <a href="{% url 'analysis_result' analysis.id %}" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h6 class="mb-1">{{ analysis.url }}</h6>
-                            <small>{{ analysis.created_at|timesince }} ago</small>
-                        </div>
-                        <p class="mb-1">Analyzed for {{ analysis.get_colorblind_type_display }} - {{ analysis.issues_count }} issues found</p>
-                    </a>
-                    {% endfor %}
+                <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between">
+                        <h6 class="mb-1">{{ analysis.project_name }}</h6>
+                        <small>{{ analysis.created_at|timesince }} ago</small>
+                    </div>
+                    <p class="mb-1">Analyzed for {{ analysis.get_colorblind_type_display }} – {{ analysis.issues_count }} issues found</p>
                 </div>
-            </div>
+            </a>
+            {% endfor %}
         </div>
-        {% endif %}
+    </div>
+</div>
+{% endif %}
+
+
     </div>
 </div>
 {% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Edit Project: {{ project.name }}</h2>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if project.custom_image %}
+      <img src="{{ project.custom_image.url }}" alt="Uploaded Image" style="max-width: 300px; margin-bottom: 10px;">
+    {% endif %}
+    <button type="submit">Save Changes</button>
+  </form>
+{% endblock %}

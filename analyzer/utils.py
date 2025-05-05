@@ -101,7 +101,7 @@ def analyze_website_for_colorblindness(url, colorblind_type):
 def calculate_contrast_ratio(color1, color2):
     """Calculate WCAG contrast ratio between two colors"""
     def get_luminance(c):
-        c = c / 255
+        
         return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2] if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
     
     luminance1 = get_luminance(color1)
@@ -110,3 +110,16 @@ def calculate_contrast_ratio(color1, color2):
     lighter = max(luminance1, luminance2)
     darker = min(luminance1, luminance2)
     return (lighter + 0.05) / (darker + 0.05)
+# analyzer/utils.py
+
+def run_colorblind_analysis(image_path):
+    # Example placeholder implementation
+    # You can later replace this with actual color analysis logic
+    print(f"Analyzing image: {image_path}")
+    return {
+        "type": "colorblind_safe",  # or "protanopia", etc.
+        "message": "Image is colorblind-friendly."
+    }
+
+
+

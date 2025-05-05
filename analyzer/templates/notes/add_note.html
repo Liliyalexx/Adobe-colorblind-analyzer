@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h2>Add Note to Project</h2>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-success">Save Note</button>
+</form>
+
+<a href="{% url 'project_list' %}" class="btn btn-secondary mt-3">Back to Projects</a>
+{% endblock %}

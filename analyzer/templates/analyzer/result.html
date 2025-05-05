@@ -55,37 +55,76 @@
         </div>
     </div>
     
-    <div class="col-lg-4">
-        <div class="card shadow-sm">
-            <div class="card-header bg-white">
-                <h5 class="mb-0">About {{ colorblind_type_display }}</h5>
-            </div>
-            <div class="card-body">
-                {% if analysis.colorblind_type == 'protanopia' %}
-                <p>Protanopia is a type of red-green color blindness where the red cones in the eye are missing.</p>
-                <p>People with protanopia have difficulty distinguishing between red and green hues.</p>
-                {% elif analysis.colorblind_type == 'deuteranopia' %}
-                <p>Deuteranopia is a type of red-green color blindness where the green cones in the eye are missing.</p>
-                <p>People with deuteranopia have difficulty distinguishing between red and green hues.</p>
-                {% elif analysis.colorblind_type == 'tritanopia' %}
-                <p>Tritanopia is a rare blue-yellow color blindness where the blue cones in the eye are missing.</p>
-                <p>People with tritanopia have difficulty distinguishing between blue and yellow hues.</p>
-                {% else %}
-                <p>Achromatomaly is a form of color blindness where people see reduced color saturation.</p>
-                <p>People with achromatomaly see colors but they appear washed out or less vibrant.</p>
-                {% endif %}
-                
-                <div class="mt-3">
-                    <h6>Tips for Accessibility:</h6>
-                    <ul class="small">
-                        <li>Use sufficient color contrast</li>
-                        <li>Don't rely solely on color to convey information</li>
-                        <li>Use patterns or textures in addition to color</li>
-                        <li>Test your designs with color blindness simulators</li>
-                    </ul>
-                </div>
+   <div class="col-lg-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-white">
+            <h5 class="mb-0">About {{ colorblind_type_display }}</h5>
+        </div>
+        <div class="card-body">
+            {% if analysis.colorblind_type == 'protanopia' %}
+            <p>Protanopia is a type of red-green color blindness where the red cones in the eye are missing.</p>
+            <p>People with protanopia have difficulty distinguishing between red and green hues.</p>
+            {% elif analysis.colorblind_type == 'deuteranopia' %}
+            <p>Deuteranopia is a type of red-green color blindness where the green cones in the eye are missing.</p>
+            <p>People with deuteranopia have difficulty distinguishing between red and green hues.</p>
+            {% elif analysis.colorblind_type == 'tritanopia' %}
+            <p>Tritanopia is a rare blue-yellow color blindness where the blue cones in the eye are missing.</p>
+            <p>People with tritanopia have difficulty distinguishing between blue and yellow hues.</p>
+            {% else %}
+            <p>Achromatomaly is a form of color blindness where people see reduced color saturation.</p>
+            <p>People with achromatomaly see colors but they appear washed out or less vibrant.</p>
+            {% endif %}
+            
+            <div class="mt-3">
+                <h6>Tips for Accessibility:</h6>
+                <ul class="small">
+                    <li>Use sufficient color contrast</li>
+                    <li>Don't rely solely on color to convey information</li>
+                    <li>Use patterns or textures in addition to color</li>
+                    <li>Test your designs with color blindness simulators</li>
+                </ul>
             </div>
         </div>
     </div>
+
+    <!-- Add Notes Card -->
+    <div class="card shadow-sm mt-4">
+        <div class="card-header bg-white">
+            <h5 class="mb-0">Your Notes</h5>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="{% url 'add_note' analysis.id %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="note">Add a Note</label>
+                    <textarea class="form-control" id="note" name="note" rows="3" placeholder="Write your note here..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Save Note</button>
+            </form>
+            
+            {% if analysis.notes %}
+                <div class="mt-3">
+                    <h6>Your Existing Notes:</h6>
+                    <ul class="list-group">
+                        {% for note in analysis.notes %}
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <span>{{ note.text }}</span>
+                                    <div class="btn-group">
+                                        <a href="{% url 'edit_note' note.id %}" class="btn btn-sm btn-warning">Edit</a>
+                                        <a href="{% url 'delete_note' note.id %}" class="btn btn-sm btn-danger">Delete</a>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% else %}
+                <p>No notes added yet.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
 </div>
 {% endblock %}
