@@ -49,6 +49,8 @@ def analyze_website_for_colorblindness(url, colorblind_type):
     # Set up Selenium WebDriver
     options = Options()
     options.add_argument('--headless')
+    options.add_argument('--no-sandbox')  # Disable sandbox for Chrome on Heroku
+    options.add_argument('--disable-dev-shm-usage')  # Avoids out-of-memory errors
     options.add_argument('--disable-gpu')
     options.add_argument('--window-size=1200,800')
     
