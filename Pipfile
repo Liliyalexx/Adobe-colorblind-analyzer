@@ -6,8 +6,6 @@ name = "pypi"
 [packages]
 psycopg2-binary = "*"
 whitenoise = "*"
-dj-database-url = "*"
-python-dotenv = "*"
 django = "*"
 requests = "*"
 bs4 = "*"
@@ -16,6 +14,8 @@ webdriver-manager = "*"
 pillow = "*"
 numpy = "*"
 gunicorn = "*"
+dj-database-url = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

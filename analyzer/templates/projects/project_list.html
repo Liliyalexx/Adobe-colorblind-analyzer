@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/projects/projects-index.css' %}">
-<link rel="icon" href="{% static 'path/to/favicon.ico' %}" type="image/x-icon">
+<link rel="stylesheet" href="{% static 'analyzer/css/projects/projects-index.css' %}">
+<link rel="icon" href="{% static 'analyzer/path/to/favicon.ico' %}" type="image/x-icon">
 {% endblock %}
 
 {% block content %}
@@ -11,9 +11,9 @@
   <section class="page-header" style="text-align: center; margin-bottom: 20px;">
     <h1>Project List</h1>
     <div class="status-icons" style="display: flex; justify-content: center; gap: 20px;">
-      <img class="icon" src="{% static 'images/completed.png' %}" alt="Completed" style="width: 30px; height: 30px;">
+      <img class="icon" src="{% static 'analyzer/images/completed.png' %}" alt="Completed" style="width: 30px; height: 30px;">
       <span>Completed</span>
-      <img class="icon" src="{% static 'images/inprogress.png' %}" alt="In Progress" style="width: 30px; height: 30px;">
+      <img class="icon" src="{% static 'analyzer/images/inprogress.png' %}" alt="In Progress" style="width: 30px; height: 30px;">
       <span>In Progress</span>
     </div>
 </div>
@@ -25,10 +25,10 @@
         <div class="card-header" style="text-align: center; margin-bottom: 20px;">
           {% if project.is_completed %}
             Status is:
-            <img class="status-icon" src="{% static 'images/completed.png' %}" alt="Completed" style="width: 40px; height: 40px;">
+            <img class="status-icon" src="{% static 'analyzer/images/completed.png' %}" alt="Completed" style="width: 40px; height: 40px;">
           {% else %}
             Status is:
-            <img class="status-icon" src="{% static 'images/inprogress.png' %}" alt="In Progress" style="width: 40px; height: 40px;">
+            <img class="status-icon" src="{% static 'analyzer/images/inprogress.png' %}" alt="In Progress" style="width: 40px; height: 40px;">
           {% endif %}
           <h2 class="card-title">{{ project.name }}</h2>
         </div>
@@ -49,7 +49,7 @@
         
         <script>
           function handleImageError(websiteUrl) {
-            const fallbackImage = '/static/images/default-fallback.png';
+            const fallbackImage = '/static/analyzer/images/default-fallback.png';
             fetchWebsiteImage(websiteUrl)
               .then(imageUrl => {
                 document.getElementById('website-screenshot').src = imageUrl || fallbackImage;

@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import HomeView, CreateProjectView, AnalysisResultView, signup, login_view, about, project_list
 from . import views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
