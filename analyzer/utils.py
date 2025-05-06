@@ -1,3 +1,4 @@
+import os
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -10,6 +11,8 @@ from PIL import Image
 import io
 import numpy as np
 import colorsys
+
+
 
 def simulate_colorblindness(color, colorblind_type):
     """Simulate color blindness by converting RGB colors (0-255 scale)"""
