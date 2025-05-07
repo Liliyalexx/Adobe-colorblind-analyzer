@@ -26,7 +26,6 @@ graph TD
     D --> G
     E --> G
     F --> G
-
 ✨ Key Features
 👁️ Color Simulation: See designs through colorblind eyes
 
