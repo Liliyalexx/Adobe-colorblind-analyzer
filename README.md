@@ -83,18 +83,19 @@ Deployment: Heroku with Selenium buildpacks
 
 ## 📸 Screenshots
 **Home Page**
-![Home Page](static/analyzer/images/1.png)
+![Home Page](analyzer/static/analyzer/images/1.png)
+
 
 **Analysis Dashboard**
-![Analysis Dashboard](static/analyzer/images/1.png)
+![Analysis Dashboard](analyzer/static/analyzer/images/3.png)
 
 **Project View**
 
-![Project View](screenshots/project-view.png)
+![Project View](analyzer/static/analyzer/images/4.png)
 
-**Simulation**
+**Projects Page**
 
-![Simulation](screenshots/simulation.png)
+![Progects Page](analyzer/static/analyzer/images/5.png)
 		
 
 ## 🚀 Getting Started
