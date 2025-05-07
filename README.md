@@ -82,9 +82,10 @@ Vision: Selenium, PIL (via Pillow), Colorsys
 Deployment: Heroku with Selenium buildpacks
 
 ## 📸 Screenshots
+**Home Page**
+![Home Page](static/analyzer/images/1.png)
 
 **Analysis Dashboard**
-![Home Page](static/analyzer/images/1.png)
 ![Analysis Dashboard](static/analyzer/images/1.png)
 
 **Project View**
