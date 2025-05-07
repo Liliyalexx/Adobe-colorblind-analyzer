@@ -82,7 +82,18 @@ Vision: Selenium, PIL (via Pillow), Colorsys
 Deployment: Heroku with Selenium buildpacks
 
 ## 📸 Screenshots
-Analysis Dashboard	Project View	Simulation
+
+**Analysis Dashboard**
+![Home Page](images/1.png)
+![Analysis Dashboard](screenshots/analysis-dashboard.png)
+
+**Project View**
+
+![Project View](screenshots/project-view.png)
+
+**Simulation**
+
+![Simulation](screenshots/simulation.png)
 		
 
 ## 🚀 Getting Started
@@ -95,7 +106,7 @@ Heroku CLI (for deployment)
 
 ## ⚙️ Installation
 
-git clone https://github.com/yourrepo/adobe-colorblind-analyzer.git
+git clone https://github.com/liliyalexx/adobe-colorblind-analyzer.git
 cd adobe-colorblind-analyzer
 pip install -r requirements.txt
 
@@ -128,8 +139,9 @@ git push heroku main
 🅰️ Adobe Accessibility
 
 ## 💡 Future Enhancements
+
 🤖 AI-Powered Colorblind Check
 Integrate machine learning to automatically analyze color patterns and generate accessible alternatives for problematic color combinations.
 
-## 🎨 Professional CSS Styling
+🎨 Professional CSS Styling
 Refactor and enhance CSS for better maintainability, consistency, and responsiveness using custom themes and modern UI principles.
