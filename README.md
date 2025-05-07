@@ -26,27 +26,30 @@ graph TD
     D --> G
     E --> G
     F --> G
-✨ Key Features
-👁️ Color Simulation: See designs through colorblind eyes
 
-🤖 Automated Testing: Detect contrast issues in UI elements
 
-✅ WCAG Compliance: Identify accessibility violations
+## ✨ Key Features
 
-📊 Project Tracking: Monitor improvements over time
+<ul>
+  <li><strong style="font-size: 1.1rem;">👁️ Color Simulation:</strong> See designs through colorblind eyes</li>
+  <li><strong style="font-size: 1.1rem;">🤖 Automated Testing:</strong> Detect contrast issues in UI elements</li>
+  <li><strong style="font-size: 1.1rem;">✅ WCAG Compliance:</strong> Identify accessibility violations</li>
+  <li><strong style="font-size: 1.1rem;">📊 Project Tracking:</strong> Monitor improvements over time</li>
+  <li><strong style="font-size: 1.1rem;">👥 Team Collaboration:</strong> Share findings with your team</li>
+</ul>
 
-👥 Team Collaboration: Share findings with your team
 
-🎯 Why This Matters
+## 🎯 Why This Matters
 "Just as I experience deafness to certain frequencies, colorblind users experience 'blindness' to specific color ranges. This tool bridges that perceptual gap."
 
-👨‍👩‍👧 1 in 12 men and 1 in 200 women have color vision deficiency
+<ul>
+  <li><strong style="font-size: 1.1rem;">👨‍👩‍👧 1 in 12 men and 1 in 200 women</strong> have color vision deficiency</li>
+  <li><strong style="font-size: 1.1rem;">🚦 Colorblind users</strong> may miss critical UI elements</li>
+  <li><strong style="font-size: 1.1rem;">♿ Accessible design</strong> benefits ALL users</li>
+</ul>
 
-🚦 Colorblind users may miss critical UI elements
 
-♿ Accessible design benefits ALL users
-
-🛠 Technical Implementation
+## 🛠 Technical Implementation
 
 def simulate_colorblindness(color, colorblind_type):
     r, g, b = [x / 255.0 for x in color]
@@ -69,7 +72,7 @@ def simulate_colorblindness(color, colorblind_type):
     
     return (int(new_r * 255), int(new_g * 255), int(new_b * 255))
 
-🖥 Tech Stack
+## 🖥 Tech Stack
 Frontend: Django Templates, Bootstrap 5
 
 Backend: Python, Django
@@ -78,11 +81,11 @@ Vision: Selenium, PIL (via Pillow), Colorsys
 
 Deployment: Heroku with Selenium buildpacks
 
-📸 Screenshots
+## 📸 Screenshots
 Analysis Dashboard	Project View	Simulation
 		
 
-🚀 Getting Started
+## 🚀 Getting Started
 📋 Prerequisites
 Python 3.9+
 
@@ -90,46 +93,43 @@ Chrome Browser
 
 Heroku CLI (for deployment)
 
-⚙️ Installation
-bash
-Copy
-Edit
+## ⚙️ Installation
+
 git clone https://github.com/yourrepo/adobe-colorblind-analyzer.git
 cd adobe-colorblind-analyzer
 pip install -r requirements.txt
-💻 Run Locally
-bash
-Copy
-Edit
-python manage.py migrate
+
+## 💻 Run Locally
+
+python manage.py migrate 
 python manage.py runserver
-☁️ Deploy to Heroku
-bash
-Copy
-Edit
+
+## ☁️ Deploy to Heroku
+
 heroku create
 heroku buildpacks:add --index 1 https://github.com/heroku/heroku-buildpack-chromedriver
 heroku buildpacks:add --index 2 https://github.com/heroku/heroku-buildpack-google-chrome
 heroku buildpacks:add --index 3 heroku/python
 git push heroku main
 
-📜 Compliance Standards
+## 📜 Compliance Standards
+
 ✅ WCAG 2.1 AA (4.5:1 contrast ratio)
 
 ✅ Section 508
 
 ✅ Adobe Accessibility Guidelines
 
-🔗 Resources
+## 🔗 Resources
 🔍 Colour Blind Awareness
 
 🎨 WebAIM Contrast Checker
 
 🅰️ Adobe Accessibility
 
-💡 Future Enhancements
+## 💡 Future Enhancements
 🤖 AI-Powered Colorblind Check
 Integrate machine learning to automatically analyze color patterns and generate accessible alternatives for problematic color combinations.
 
-🎨 Professional CSS Styling
+## 🎨 Professional CSS Styling
 Refactor and enhance CSS for better maintainability, consistency, and responsiveness using custom themes and modern UI principles.
