@@ -27,7 +27,7 @@ graph TD
     E --> G
     F --> G
 
-
+```
 ## ✨ Key Features
 
 <ul>
