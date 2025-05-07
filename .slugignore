@@ -1,6 +1,0 @@
-*.md
-*.png
-tests/
-docs/
-node_modules/
-*.zip
