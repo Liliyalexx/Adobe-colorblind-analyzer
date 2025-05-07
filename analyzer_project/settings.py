@@ -31,7 +31,7 @@ if not 'ON_HEROKU' in os.environ:
 
 
 # ALLOWED_HOSTS = ["*"]
-ALLOWED_HOSTS = ['colorblind-analyzer.onrender.com', 'localhost']
+ALLOWED_HOSTS = ["*", 'colorblind-analyzer.onrender.com', 'localhost']
 
 
 # Application definition
