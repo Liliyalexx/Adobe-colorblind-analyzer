@@ -48,7 +48,6 @@ def simulate_colorblindness(color, colorblind_type):
 def analyze_website_for_colorblindness(url, colorblind_type):
     # Set up Selenium WebDriver
     options = Options()
-    options.binary_location = "/app/.apt/usr/bin/google-chrome"
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
@@ -56,11 +55,7 @@ def analyze_website_for_colorblindness(url, colorblind_type):
     options.add_argument("--remote-debugging-port=9222")
 
     
-    driver = webdriver.Chromedriver = webdriver.Chrome(
-    executable_path="/app/.chromedriver/bin/chromedriver",
-    options=options
-)
-
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     
     try:
         # Load the webpage
