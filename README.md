@@ -6,6 +6,16 @@
 
 ---
 
+## 🎯 Why This Matters for me
+"As someone who is 80% deaf and cannot hear high-frequency sounds like children’s or women’s voices, I understand what it’s like to miss important information others take for granted. Colorblind users experience a similar kind of ‘invisible barrier’ — they can’t perceive certain colors that designers often rely on. This tool helps bridge that perceptual gap and ensures no one is left out of the experience."
+
+<ul>
+  <li><strong style="font-size: 1.1rem;">👨‍👩‍👧 1 in 12 men and 1 in 200 women</strong> have color vision deficiency</li>
+  <li><strong style="font-size: 1.1rem;">🚦 Colorblind users</strong> may miss critical UI elements</li>
+  <li><strong style="font-size: 1.1rem;">♿ Accessible design</strong> benefits ALL users</li>
+</ul>
+
+
 ## 🔍 Project Overview
 
 Colorblind Analyzer simulates how websites appear to individuals with:
@@ -37,17 +47,6 @@ graph TD
   <li><strong style="font-size: 1.1rem;">📊 Project Tracking:</strong> Monitor improvements over time</li>
   <li><strong style="font-size: 1.1rem;">👥 Team Collaboration:</strong> Share findings with your team</li>
 </ul>
-
-
-## 🎯 Why This Matters
-"Just as I experience deafness to certain frequencies, colorblind users experience 'blindness' to specific color ranges. This tool bridges that perceptual gap."
-
-<ul>
-  <li><strong style="font-size: 1.1rem;">👨‍👩‍👧 1 in 12 men and 1 in 200 women</strong> have color vision deficiency</li>
-  <li><strong style="font-size: 1.1rem;">🚦 Colorblind users</strong> may miss critical UI elements</li>
-  <li><strong style="font-size: 1.1rem;">♿ Accessible design</strong> benefits ALL users</li>
-</ul>
-
 
 ## 🛠 Technical Implementation
 
