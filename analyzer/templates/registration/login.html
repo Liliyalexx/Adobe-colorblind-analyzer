@@ -2,6 +2,13 @@
 {% load static %}
 
 {% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="card p-4 shadow" style="width: 100%; max-width: 400px;">
+    <div class="text-center mb-3">
+      <img id="profilePreview" src="{% static 'analyzer/images/myimage.png' %}" alt="Profile Preview" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+    </div>
+    <form method="post" enctype="multipart/form-data">
+
 <div class="login-container">
     <h2>Login</h2>
     
